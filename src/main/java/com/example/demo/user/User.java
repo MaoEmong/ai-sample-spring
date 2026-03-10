@@ -29,16 +29,24 @@ public class User {
     private String password;
     private String email; // null 가능!
 
+    private String zipcode;
+    private String address;
+    private String addressDetail;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     // RULE : 컬렉션은 생성자에 넣지 않는다.
     @Builder
-    public User(Integer id, String username, String password, String email, LocalDateTime createdAt) {
+    public User(Integer id, String username, String password, String email, String zipcode, String address,
+            String addressDetail, LocalDateTime createdAt) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
+        this.zipcode = zipcode;
+        this.address = address;
+        this.addressDetail = addressDetail;
         this.createdAt = createdAt;
     }
 
