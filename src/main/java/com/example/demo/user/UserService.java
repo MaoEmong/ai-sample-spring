@@ -10,18 +10,4 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-
-    @Transactional
-    public void join(UserRequest.Join reqDTO) {
-        User user = User.builder()
-                .username(reqDTO.getUsername())
-                .password(reqDTO.getPassword())
-                .email(reqDTO.getEmail())
-                .zipcode(reqDTO.getZipcode())
-                .address(reqDTO.getAddress())
-                .addressDetail(reqDTO.getAddressDetail())
-                .build();
-        userRepository.save(user);
-    }
-
 }
